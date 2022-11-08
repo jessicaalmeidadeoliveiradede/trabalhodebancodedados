@@ -1,0 +1,36 @@
+create database empresa_es;
+create table departamento (
+id_departamento int not null,
+nome varchar (52) not null,
+telefone int not null,
+endereço int not null,
+);
+alter table departamento add primary key (id_departamento);
+create table projeto (
+id_projeto int not null,
+id_departamento int not null,
+nome varchar (30) not null,
+duração date not null,
+descrição varchar (90) not null,
+primary key (id_projeto)
+); 
+ALTER TABLE projeto
+ADD FOREIGN KEY (id_departamento) REFERENCES departamento(id_departamento); 
+create table empregado(
+nome varchar (30) not null,
+CPF int not null ,
+id_empregado int not null,
+id_derpartamento int not null,
+id_projeto int not null,
+enderço int not null,
+cargo varchar not null,
+horario date not null,
+primary key (id_empregado)
+); 
+ALTER TABLE empregado
+ADD FOREIGN KEY (id_projeto) REFERENCES projeto(id_projeto); 
+ agora voce coloca o dados 
+com insert into e o nome da tabela values com as informações que vai conter na tabela 
+para ver os dados e select*from 
+e depois coloque no word
+mais primeiro faz rodar no progama
